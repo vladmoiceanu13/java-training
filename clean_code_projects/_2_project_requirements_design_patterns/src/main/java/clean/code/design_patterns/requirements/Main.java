@@ -1,8 +1,23 @@
 package clean.code.design_patterns.requirements;
 
-public class Main {
+public class AllCars extends CarPlan {
 
-    public static void main(String[] args) {
-        //TODO implement your design patterns in this package
+    private List<CarPlan> carList = new ArrayList<CarPlan>();
+
+    @Override
+    public void showCarDetails() {
+        for (CarPlan car:carList) {
+            car.showCarDetails();
+        }
+    }
+
+    public void addCar (CarPlan car) {
+        carList.add(car);
+    }
+
+    public void removeCar (CarPlan car) {
+        carList.remove(car);
     }
 }
+
+

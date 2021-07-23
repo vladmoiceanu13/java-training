@@ -1,9 +1,12 @@
 package clean.code.chess.requirements;
 
+import clean.code.chess.requirements.attributes.MovementType;
+import clean.code.chess.requirements.attributes.PieceColor;
+import clean.code.chess.requirements.pieces.Pawn;
 import org.junit.Before;
 import org.junit.Test;
 
-import static org.junit.Assert.*;
+import static org.junit.Assert.assertEquals;
 
 public class PawnTest {
 
@@ -51,6 +54,11 @@ public class PawnTest {
         testSubject.Move(MovementType.MOVE, 6, 2);
         assertEquals(6, testSubject.getXCoordinate());
         assertEquals(2, testSubject.getYCoordinate());
+
+        chessBoard.Add(testSubject, 5, 3, PieceColor.WHITE);
+        testSubject.Move(MovementType.MOVE, 5, 4);
+        assertEquals(5, testSubject.getXCoordinate());
+        assertEquals(4, testSubject.getYCoordinate());
     }
 
 }
